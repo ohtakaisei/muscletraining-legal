@@ -20,7 +20,7 @@
 <body>
 <p class="lang"><a href="./privacy.ja.html">日本語</a> · <a href="./privacy.en.html">English</a> · <a href="./privacy.ko.html">한국어</a></p>
 <h1>Privacy Policy</h1>
-<p class="meta">App: Muscle Log (the "App") / Last updated: May 29, 2026 / Operator: Kaisei Ota</p>
+<p class="meta">App: Muscle Log (the "App") / Last updated: June 23, 2026 / Operator: Kaisei Ota</p>
 
 <p>This Privacy Policy describes the types of information the provider of the App (the "Provider," "we") collects in connection with your use of the App, how it is used, when it is shared, and how it is managed. By using the App, you are deemed to have agreed to this Policy.</p>
 
@@ -31,7 +31,7 @@
   <tr><td>Training & nutrition data</td><td>Workout logs (exercise, weight, reps, date/time), meal logs, goals, notes</td><td>Your input</td></tr>
   <tr><td>Social information</td><td>Follow/follower relationships, blocks, aggregated values for leaderboards (e.g., weekly volume, streak days)</td><td>Your actions</td></tr>
   <tr><td>AI coach data</td><td>Chat content with the AI, inputs for menu generation, meal photos</td><td>Your input / submission</td></tr>
-  <tr><td>Health (HealthKit) data</td><td>Body weight, active energy, step count, resting heart rate, exercise time, sleep, workouts</td><td>Read from Apple Health with your permission / workouts written by the App</td></tr>
+  <tr><td>Health (HealthKit) data</td><td>Body weight, active energy, step count, resting heart rate, exercise time, workouts, sleep (sleep stages, heart rate, heart rate variability (HRV), blood oxygen (SpO₂), respiratory rate, wrist skin temperature)</td><td>Read from Apple Health with your permission / workouts written by the App</td></tr>
   <tr><td>Purchase information</td><td>Subscription and in-app purchase status, granted credit balance (payment is processed by Apple; we do not collect card details)</td><td>App Store / StoreKit</td></tr>
   <tr><td>Usage & device information</td><td>App operation logs, error information (for debugging)</td><td>Automatically</td></tr>
 </table>
@@ -47,8 +47,10 @@
 
 <h2>3. Handling of HealthKit Data</h2>
 <ul>
-  <li>Health data obtained from HealthKit is used to assist and display your records within the App.</li>
+  <li>Health data obtained from HealthKit is used to assist, display, and analyze your records within the App.</li>
+  <li>For the Sleep Tracking feature (Coach plan), nightly computed <strong>summaries</strong> (sleep duration, time in each stage, sleep score, average/lowest heart rate, average HRV, etc.) are stored on our server (Supabase) to sync across your devices. The <strong>raw HealthKit samples themselves are not stored</strong>.</li>
   <li>We do not use information obtained from HealthKit for advertising or marketing purposes.</li>
+  <li>We do not store information obtained from HealthKit in iCloud.</li>
   <li>We do not sell or disclose information obtained from HealthKit to third parties without your consent.</li>
   <li>You can revoke HealthKit access at any time in the Apple Health settings.</li>
 </ul>
@@ -57,7 +59,7 @@
 <p>We use the following external services to provide functionality. Data is transmitted to and stored by them only to the extent necessary.</p>
 <table>
   <tr><th>Provider</th><th>Purpose</th><th>Main data sent</th></tr>
-  <tr><td>Supabase (backend, authentication, database; region: Tokyo)</td><td>Account management, data storage, aggregation, purchase credit management</td><td>Account info, profile, social info, aggregates, AI chat history, etc.</td></tr>
+  <tr><td>Supabase (backend, authentication, database; region: Tokyo)</td><td>Account management, data storage, aggregation, purchase credit management</td><td>Account info, profile, social info, aggregates, AI chat history, sleep summaries (Coach plan), etc.</td></tr>
   <tr><td>OpenAI (AI processing)</td><td>Menu generation, meal photo analysis, chat responses</td><td>Chat text, generation inputs, meal photos (not stored on the server after analysis)</td></tr>
   <tr><td>Apple (App Store / StoreKit / Sign in with Apple / HealthKit)</td><td>Authentication, payment, health integration</td><td>Purchase transactions, sign-in identifier</td></tr>
 </table>
